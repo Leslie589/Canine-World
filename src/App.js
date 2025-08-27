@@ -6,6 +6,7 @@ import BreedExplorer from './pages/BreedExplorer';
 import LostDogs from './pages/LostDogs';
 import Adoption from './pages/Adoption';
 
+
 function App() {
   return (
     <Routes>
