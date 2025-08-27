@@ -27,7 +27,8 @@ export default function Adoption() {
     setError(null);
 
     try {
-      const response = await fetch(`http://localhost:4000/api/animals?status=${status}`);
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/animals?status=${status}`);
+
       if (!response.ok) throw new Error('Error fetching data');
 
       const data = await response.json();
