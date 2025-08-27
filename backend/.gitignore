@@ -1,0 +1,12 @@
+# Ignora claves de API u otras configuraciones sensibles
+.env
+
+# Ignora dependencias (se pueden reinstalar con package.json)
+node_modules/
+
+# Ignora logs del sistema
+*.log
+
+# Ignora archivos del sistema operativo
+.DS_Store
+Thumbs.db
