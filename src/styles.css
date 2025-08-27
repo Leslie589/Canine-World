@@ -279,7 +279,7 @@ html, body, #root {
   }
 
   .footer {
-    height: auto;
+    height:120px;
     padding: 20px 10px;
   }
 
