@@ -1,24 +1,19 @@
 const express = require('express');
 const cors = require('cors');
 const fetch = require('node-fetch');
-//require('dotenv').config();
+require('dotenv').config();
 
 
 
-require('dotenv').config(); // Ya no necesario
 
 const app = express();
-const PORT = 4000;
+//const PORT = 4000;
 
-//const PORT = process.env.PORT || 4000;
-
-// ❗ Las credenciales están ahora directamente en el código
-const CLIENT_ID = 'dVz504JoIpaFpcVDnfw3oMgURxNHfWRSTQVoeFCtSY6huuy7Bp';
-const CLIENT_SECRET ='iQDwE0fH73Vo0L3CEQukPuhSNk0sTTDQ5mZBli8K';
+const PORT = process.env.PORT || 4000;
 
 // 👇 Aquí defines tus claves directamente
-//const CLIENT_ID = process.env.CLIENT_ID;
-//const CLIENT_SECRET = process.env.CLIENT_SECRET;
+const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
 
 
 let accessToken = null;
