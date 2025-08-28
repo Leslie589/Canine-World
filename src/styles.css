@@ -278,10 +278,15 @@ html, body, #root {
     max-height: 200px;
   }
 
-  .footer {
-    height:70px;
+  .footer  {
+    height:85px;
     padding: 20px 10px;
   }
+
+  .footer p{
+    font-size: 23px;
+  }
+
 
   .page-link {
     padding: 0.25rem 0.5rem;
