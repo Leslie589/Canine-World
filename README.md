@@ -69,11 +69,16 @@ Each profile includes:
 ## 🛠️ Technologies Used
 
 - **React**: UI built with functional components and hooks
-- **React Router v6**: Routing and navigation
+- **React Router DOM v6**: Routing and navigation for web applications
 - **Bootstrap 5**: Responsive design and UI components
-- **Fetch API**: Dynamic data from external APIs
+- **Fetch API**: Dynamic data fetching from external APIs
 - **Environment variables (.env)**: Secure management of API keys and URLs
 - **Custom CSS**: Tailored styles for the application
+- **JavaScript**: (ES6+) Application logic and functionality
+- **Express.js**: Backend server and API management
+- **Node.js**: Development environment and dependency management with npm
+- **TheDog API**: External API for dog breed information and data
+- **Petfinder API**: Management of adoption data and available animals
 
 ---
 
