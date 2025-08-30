@@ -13,7 +13,7 @@ The application integrates two external APIs to provide up-to-date and reliable 
 
 You can **watch a demo of the application** running here:
 
-[![▶️ Launch App](https://img.shields.io/badge/Launch_App-Click_Here-blue?style=for-the-badge)](https://canine-world-1.onrender.com/)
+[![▶️ Launch App](https://img.shields.io/badge/Click_Here-blue?style=for-the-badge)](https://canine-world-1.onrender.com/)
 
 ---
 
