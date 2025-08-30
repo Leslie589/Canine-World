@@ -1,70 +1,119 @@
-# Getting Started with Create React App
+# 🐶 Canine World
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Canine World** is a web application that allows users to explore dog breeds, view detailed information about each one, and access real-time data on dogs available for adoption, already adopted, or found.
 
-## Available Scripts
+The application integrates two external APIs to provide up-to-date and reliable content:
 
-In the project directory, you can run:
+- [The Dog API](https://thedogapi.com) – Breed data and characteristics
+- [Petfinder API](https://www.petfinder.com/developers/) – Information about dogs for adoption
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 See the Project in Action
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You can **watch a demo of the application** running here:
 
-### `npm test`
+[![▶️ Launch App](https://img.shields.io/badge/Launch_App-Click_Here-blue?style=for-the-badge)](https://canine-world-1.onrender.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📂 App Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🏠 Home
+- General presentation of the project
+- Quick access to main sections
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🐾 Lost Dogs
+- List of dogs reported as missing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🔍 Breed Explorer
+- Breed search
+- Filters by traits
+- Detailed view: origin, purpose, lifespan, weight, height, temperament
 
-### `npm run eject`
+### 🏡 Adoption & More
+**Filtered by status:**
+- Available for adoption: currently available dogs
+- Adopted: recently adopted dogs
+- Found: in custody, waiting to be claimed
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Each profile includes:
+- Image
+- Name
+- Age and size
+- Location
+- Contact information
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### ℹ️ About the Project
+- **Goal:** promote responsible adoption and provide useful information about the canine world
+- **Focus:** user-friendly interface and valuable content
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 💡 Features & Highlights
 
-## Learn More
+- Real-time data from the Petfinder API, including pet adoption statuses:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+      Adoptable (found and available for adoption)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+      In adoption process
 
-### Code Splitting
+      Adopted
+- Breed explorer with filters and detailed information.
+- Responsive design using Bootstrap 5.
+- API key protection via environment variables, both on the frontend and backend.
+- Dynamic real-time data loading through external APIs.
+- Integration of a RESTful backend for API communication.
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🛠️ Technologies Used
 
-### Analyzing the Bundle Size
+- **React**: UI built with functional components and hooks
+- **React Router v6**: Routing and navigation
+- **Bootstrap 5**: Responsive design and UI components
+- **Fetch API**: Dynamic data from external APIs
+- **Environment variables (.env)**: Secure management of API keys and URLs
+- **Custom CSS**: Tailored styles for the application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## ⚙️ Installation & Running the App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Clone the repository:
 
-### Advanced Configuration
+```bash
+git clone https://github.com/Leslie589/Canine-World.git
+cd canine-world
+```
+2. Install dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npm install
 
-### Deployment
+# Run the application
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
 
-### `npm run build` fails to minify
+3. Set up environment variables:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Frontend (.env file at the root of the frontend project)::
+
+```bash
+REACT_APP_DOG_API_KEY=your_thedogapi_key
+REACT_APP_BACKEND_URL=http://localhost:5000  # or your deployed backend URL
+```
+- Backend (.env file in the backend folder):
+```bash
+  PETFINDER_API_KEY=your_petfinder_key
+PETFINDER_API_SECRET=your_petfinder_secret
+🔐 These credentials are required to obtain an access token and authenticate API requests.
+```
+
+🔑 API Key Registration
+
+To use the APIs, you need to register and obtain keys from:
+
+- [The Dog API](https://thedogapi.com) 
+
+- [Petfinder API](https://www.petfinder.com/developers/)
