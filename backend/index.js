@@ -88,15 +88,6 @@ app.get('/api/animals', async (req, res) => {
 
 
 
-// Aquí le dices que sirva los archivos estáticos desde ../build (la carpeta build que está a nivel raíz)
-app.use(express.static(path.join(__dirname, '..', 'build')));
-
-// Ruta catch-all para servir el index.html
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
-});
-
-
 
 
 app.listen(PORT, () => {
