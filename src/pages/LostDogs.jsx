@@ -55,17 +55,17 @@ export default function LostDogs() {
   return (
     <>
  
-      <div className="container ">
+      <div className="container mb-5">
         <h1 className="text-center mb-5">🐶 Lost Dogs</h1>
 
         {lostDogs.map((dog) => (
           <div key={dog.id} className="card mb-4 shadow-sm p-3">
-            <div className="row g-3 align-items-center">
+  <div className="row g-3 align-items-stretch">
               <div className="col-md-5">
                 <img
                   src={dog.image}
                   alt={`dog img ${dog.name}`}
-                  className="img-fluid rounded perro-img"/>
+                  className=" rounded perro-img"/>
               </div>
               <div className="col-md-7">
                 <div className="card-body p-0">

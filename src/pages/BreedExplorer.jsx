@@ -150,7 +150,7 @@ export default function BreedExplorer() {
         {loading ? (
         <div className="spinner-container">
     <img
-      src="https://i.gifer.com/origin/14/14c05fd436b7432d905eaee65475d9a5_w200.gif"
+      src="https://images.emojiterra.com/google/noto-emoji/animated-emoji/1f43e.gif"
       alt="Loading..."
       className="spinner-img"
     />

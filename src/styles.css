@@ -113,7 +113,8 @@ html, body, #root {
 }
 
 .spinner-img {
-  width: 100px;
+  width: 120px;
+  height: 100px;
   animation: bounce 1s infinite ease-in-out;
 }
 
@@ -137,11 +138,16 @@ html, body, #root {
   margin-bottom: 2rem;
 }
 
-.perro-img {
-  max-height: 400px;
+
+ .perro-img {
+  width: 100%;
+  height: 100%;
+  object-fit:fill;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-height: 400px;
 }
+
+
 
 /* Listas */
 .list li {
@@ -307,7 +313,7 @@ html, body, #root {
   }
 
   .footer  {
-    height:85px;
+    height:80px;
     padding: 20px 10px;
   }
 

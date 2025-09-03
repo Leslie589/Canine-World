@@ -39,7 +39,10 @@ export default function Adoption() {
     } finally {
       setSearch(false);
     }
+
+    
   };
+  
 
   return (
     <>
@@ -67,7 +70,9 @@ export default function Adoption() {
                     </option>
                   ))}
                 </select>
+                
               </div>
+        
               <div className="col-md-2 mt-3 mt-md-0">
                 <button
                   className="btn btn-success w-100 shadow-sm"
@@ -90,9 +95,24 @@ export default function Adoption() {
 
             {!search && hasSearched && animals.length === 0 && (
               <p className="text-center text-muted">No animals to display.</p>
+
+
+              
             )}
 
+            
+
             {/* Resultados */}
+
+            {search ? (
+  <div className="spinner-container">
+    <img
+      src="https://i.gifer.com/origin/14/14c05fd436b7432d905eaee65475d9a5_w200.gif"
+      alt="Loading..."
+      className="spinner-img"
+    />
+  </div>
+) : (
             <div className="row g-4">
               {animals.map((animal) => (
                 <div className="col-lg-6" key={animal.id}>
@@ -144,7 +164,9 @@ export default function Adoption() {
                 </div>
               ))}
             </div>
+            )}
           </div>
+          
         </main>
 
       </div>
