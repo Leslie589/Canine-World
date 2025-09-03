@@ -38,7 +38,7 @@ export default function ScrollToTopButton() {
         
       }}
     >
-      ↑ Go up
+      ↑ 
     </button>
   );
 }
