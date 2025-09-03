@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import '../styles.css'; 
 
 export default function SingleDog() {
@@ -39,7 +37,7 @@ export default function SingleDog() {
 
   return (
     <>
-      <Navbar />
+     
 
       <section className="container mt-1 pt-1">
         {dog.length === 0 ? (
@@ -97,7 +95,7 @@ export default function SingleDog() {
           ))
         )}
       </section>
-      <Footer/>
+
     </>
   );
 }
