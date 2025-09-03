@@ -1,17 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import logo from '../images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../styles.css';
 
 const Navbar = () => {
+  const collapseNavbar = () => {
+    const navbar = document.getElementById('navbarNav');
+    const bsCollapse = new window.bootstrap.Collapse(navbar, {
+      toggle: false,
+    });
+    bsCollapse.hide();
+  };
+
   return (
     <header className="navbar-header">
-      <nav className="navbar navbar-expand-lg  bg-success fixed-top">
+      <nav className="navbar navbar-expand-lg bg-success fixed-top">
         <div className="container-fluid">
           {/* Logo y título */}
-          <Link to="/" className="navbar-brand d-flex align-items-center">
+          <Link to="/" className="navbar-brand d-flex align-items-center" onClick={collapseNavbar}>
             <img src={logo} alt="Logo" className="navbar-logo" />
             <span className="navbar-title">Canine World</span>
           </Link>
@@ -32,11 +40,11 @@ const Navbar = () => {
           {/* Links de navegación */}
           <div className="collapse navbar-collapse" id="navbarNav">
             <div className="navbar-nav ms-auto">
-              <Link className="nav-link" to="/">🏠 Home</Link>
-              <Link className="nav-link" to="/lost-dogs">🚨 Lost Dogs</Link>
-              <Link className="nav-link" to="/breed">🐾 Breed Explorer</Link>
-              <Link className="nav-link" to="/adoption">🐕 Adoption & More</Link>
-              <Link className="nav-link" to="/about">📄 About</Link>
+              <Link className="nav-link" to="/" onClick={collapseNavbar}>🏠 Home</Link>
+              <Link className="nav-link" to="/lost-dogs" onClick={collapseNavbar}>🚨 Lost Dogs</Link>
+              <Link className="nav-link" to="/breed" onClick={collapseNavbar}>🐾 Breed Explorer</Link>
+              <Link className="nav-link" to="/adoption" onClick={collapseNavbar}>🐕 Adoption & More</Link>
+              <Link className="nav-link" to="/about" onClick={collapseNavbar}>📄 About</Link>
             </div>
           </div>
         </div>
