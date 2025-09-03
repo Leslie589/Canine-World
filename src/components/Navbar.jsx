@@ -2,16 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+// Cambiado para importar solo Collapse
+import Collapse from 'bootstrap/js/dist/collapse';
 import '../styles.css';
 
 const Navbar = () => {
   const collapseNavbar = () => {
     const navbar = document.getElementById('navbarNav');
-    const bsCollapse = new window.bootstrap.Collapse(navbar, {
-      toggle: false,
-    });
-    bsCollapse.hide();
+    if (navbar) {
+      const bsCollapse = Collapse.getInstance(navbar) || new Collapse(navbar, { toggle: false });
+      bsCollapse.hide();
+    }
   };
 
   return (
