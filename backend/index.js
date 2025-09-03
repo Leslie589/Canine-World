@@ -1,13 +1,11 @@
 const express = require('express');
 const cors = require('cors');
 const fetch = require('node-fetch');
+const path = require("path");  // <-- Aquí agregas esto
+
 require('dotenv').config();
 
-
-
-
 const app = express();
-//const PORT = 4000;
 
 const PORT = process.env.PORT || 4000;
 
@@ -15,12 +13,12 @@ const PORT = process.env.PORT || 4000;
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 
-
 let accessToken = null;
 let expiresAt = 0;
 
 app.use(cors());
 app.use(express.json());
+
 async function obtenerToken() {
   const now = Date.now();
 
@@ -43,7 +41,7 @@ async function obtenerToken() {
 
   const data = await res.json();
 
-  console.log('Token response:', data); // <--- aquí
+  console.log('Token response:', data);
 
   if (!res.ok) {
     throw new Error(`Error al obtener token: ${data.error} - ${data.error_description}`);
@@ -56,7 +54,7 @@ async function obtenerToken() {
 }
 
 app.get('/api/animals', async (req, res) => {
-  const { status } = req.query; // adoptable, adopted, found
+  const { status } = req.query;
 
   try {
     const token = await obtenerToken();
@@ -64,7 +62,8 @@ app.get('/api/animals', async (req, res) => {
     const url = new URL('https://api.petfinder.com/v2/animals');
     if (status) url.searchParams.append('status', status);
 
-            url.searchParams.append('type', 'dog');
+    url.searchParams.append('type', 'dog');
+
     const petfinderResponse = await fetch(url.toString(), {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -83,6 +82,19 @@ app.get('/api/animals', async (req, res) => {
   } catch (error) {
     console.error('Error interno del servidor:', error);
     res.status(500).json({ error: 'Error al obtener datos de Petfinder', details: error.message });
+  }
+});
+
+
+
+// Sirve archivos estáticos desde la carpeta build que está fuera de backend
+app.use(express.static(path.join(__dirname, '..', 'build')));
+
+app.get('*', (req, res) => {
+  if (!req.path.startsWith('/api')) {
+    res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
+  } else {
+    res.status(404).send('API endpoint not found');
   }
 });
 
