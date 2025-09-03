@@ -6,20 +6,26 @@ export default function ScrollToTopButton() {
   const location = useLocation();
 
   useEffect(() => {
+    setShow(false); // Oculta el botón inmediatamente al cambiar de ruta
+
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const windowHeight = window.innerHeight;
       const docHeight = document.documentElement.scrollHeight;
 
-      setShow(scrollTop + windowHeight >= docHeight - 100);
+      const hasScroll = docHeight > windowHeight;
+      setShow(hasScroll && scrollTop > 200);
     };
 
-    // Al cambiar la ruta, verificamos el scroll inmediatamente
     handleScroll();
+    const timeoutId = setTimeout(handleScroll, 100);
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [location]); // Dependencia: se ejecuta cuando la ruta cambia
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timeoutId);
+    };
+  }, [location]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -37,7 +43,7 @@ export default function ScrollToTopButton() {
         bottom: "105px",
         right: "30px",
         zIndex: 1000,
-        opacity: show ? 1 : 0,
+        opacity: 1,
         transition: "opacity 0.5s ease-in-out",
       }}
     >
