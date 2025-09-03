@@ -87,16 +87,19 @@ app.get('/api/animals', async (req, res) => {
 
 
 
-// Sirve archivos estáticos desde la carpeta build que está fuera de backend
-app.use(express.static(path.join(__dirname, '..', 'build')));
+
+const buildPath = path.join(__dirname, 'build');
+
+app.use(express.static(buildPath));
 
 app.get('*', (req, res) => {
   if (!req.path.startsWith('/api')) {
-    res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
+    res.sendFile(path.join(buildPath, 'index.html'));
   } else {
     res.status(404).send('API endpoint not found');
   }
 });
+
 
 
 app.listen(PORT, () => {
