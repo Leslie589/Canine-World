@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // 👈 IMPORTANTE
+import { Link } from 'react-router-dom'; 
 import logo from '../images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -8,7 +8,7 @@ import '../styles.css';
 const Navbar = () => {
   return (
     <header className="navbar-header">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+      <nav className="navbar navbar-expand-lg  bg-success fixed-top">
         <div className="container-fluid">
           {/* Logo y título */}
           <Link to="/" className="navbar-brand d-flex align-items-center">

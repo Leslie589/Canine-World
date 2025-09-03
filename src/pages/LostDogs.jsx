@@ -1,8 +1,7 @@
 
 import React from 'react';
 import "../styles.css"; 
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+
 
 const lostDogs = [
   {
@@ -55,8 +54,8 @@ const lostDogs = [
 export default function LostDogs() {
   return (
     <>
-      <Navbar />
-      <div className="container">
+ 
+      <div className="container ">
         <h1 className="text-center mb-5">🐶 Lost Dogs</h1>
 
         {lostDogs.map((dog) => (
@@ -102,7 +101,7 @@ export default function LostDogs() {
           </div>
         ))}
       </div>
-      <Footer />
+
     </>
   );
 }

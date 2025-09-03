@@ -1,13 +1,12 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer';
+
 import "../styles.css";
 import logo from "../images/logo.jpg"
 
 export default function About() {
   return (
     <>
-      <Navbar />
+
 
       <div className="container col-md-12 my-4">
         <div className="row justify-content-center">
@@ -51,7 +50,7 @@ export default function About() {
         <br />
       </div>
 
-      <Footer />
+
     </>
   )
 }

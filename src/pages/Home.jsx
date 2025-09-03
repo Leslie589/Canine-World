@@ -1,14 +1,12 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.css";
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import '../styles.css'; 
 
 export default function Home() {
   return (
     <>
-      <Navbar />
+   
 
       <div className="home container text-center">
         <h1 className="display-4 fw-bold mb-4">Welcome to Canine World</h1>
@@ -28,19 +26,19 @@ export default function Home() {
           Explore Breeds
         </Link>
 
-        {/* New section for lost dogs */}
-        <div className="perros-perdidos-section p-4 my-5 border rounded shadow-sm bg-light">
+        {/* Nueva seccion para perros perdidos */}
+        <div className="perros-perdidos-section p-4 my-5 border rounded shadow-sm bg-light mb-5">
           <h2 className="fw-semibold mb-3">Looking for a lost dog?</h2>
           <p className="mb-3">
-            Check out our <Link to="/perrosperdidos" className="text-primary text-decoration-underline">Lost Dogs</Link> section to help find your furry friend.
+            Check out our <Link to="/lost-dogs" className="text-primary text-decoration-underline">Lost Dogs</Link> section to help find your furry friend.
           </p>
-          <Link to="/perrosperdidos" className="btn btn-outline-danger">
+          <Link to="/lost-dogs" className="btn btn-outline-danger">
             Go to Lost Dogs
           </Link>
         </div>
       </div>
 
-      <Footer />
+
     </>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Navbar from '../components/Navbar';
+
 import '../styles.css'; 
-import Footer from '../components/Footer';
+
 
 export default function Adoption() {
   const [animals, setAnimals] = useState([]);
@@ -44,7 +44,7 @@ export default function Adoption() {
   return (
     <>
       <div className="app-container">  {/* Contenedor flex para sticky footer */}
-        <Navbar />
+
         <main className="main-content"> {/* Crece para empujar el footer */}
           <div className="container my-5">
             <h1 className="text-center mb-3 fw-bold text-black">
@@ -146,7 +146,7 @@ export default function Adoption() {
             </div>
           </div>
         </main>
-        <Footer />
+
       </div>
     </>
   );

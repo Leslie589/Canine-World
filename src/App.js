@@ -5,18 +5,29 @@ import About from './pages/About';
 import BreedExplorer from './pages/BreedExplorer';
 import LostDogs from './pages/LostDogs';
 import Adoption from './pages/Adoption';
+import ScrollToTopButton from "../src/components/ScrollToTopButton";
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
+import './styles.css'; 
 
 function App() {
   return (
+    <>
+     <ScrollToTopButton />
+      <Navbar/>
     <Routes>
+         
       <Route path="/" element={<Home />} />
       <Route path="/breed" element={<BreedExplorer />} />
       <Route path="/:name" element={<SingleDog />} />
       <Route path="/about" element={<About />} />
       <Route path="/lost-dogs" element={<LostDogs />} />
       <Route path="/adoption" element={<Adoption />} />
+   
     </Routes>
+   <Footer/>
+     </>
   );
 }
 
