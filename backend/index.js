@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const fetch = require('node-fetch');
-const path = require("path");  // <-- Aquí agregas esto
+
 
 require('dotenv').config();
 
@@ -9,7 +9,7 @@ const app = express();
 
 const PORT = process.env.PORT || 4000;
 
-// 👇 Aquí defines tus claves directamente
+//  Aquí defines tus claves directamente
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 
