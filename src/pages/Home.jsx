@@ -1,7 +1,7 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.css";
 import { Link } from 'react-router-dom';
-import home from '../images/home.gif'
+import home from '../images/home.gif';
 import '../styles.css'; 
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
           Explore dog breeds, find information, and discover your ideal furry friend.
         </p>
         <img
-          src={home.gif}
+          src= {home}
           alt="Happy dog"
           className="img-fluid my-4"
           style={{ maxWidth: "280px" }}
