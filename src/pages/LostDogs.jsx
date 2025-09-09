@@ -1,6 +1,9 @@
 
 import React from 'react';
 import "../styles.css"; 
+import perdido3 from '../images/perdido3.jpg'
+import perdido1 from '../images/perdido1.jpg'
+import perdido2 from '../images/perdido2.jpg'
 
 
 const lostDogs = [
@@ -13,10 +16,9 @@ const lostDogs = [
     location: 'Central Park',
     dateLost: '2025-07-10',
     contact: '555-1234',
-    contactLink: 'https://wa.me/5551234',
     features: 'Red collar, very friendly',
     status: 'Searching',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYWL8PdrKGvDcibvMPgy4jUU0aiQXdAIG9VQ&s',
+    image: perdido1,
     comments: 'Got lost near the main fountain.',
   },
   {
@@ -28,10 +30,9 @@ const lostDogs = [
     location: 'Shopping Mall',
     dateLost: '2025-07-15',
     contact: '555-5678',
-    contactLink: 'mailto:contact@example.com',
     features: 'Was wearing a pink sweater',
     status: 'Searching',
-    image: 'https://previews.123rf.com/images/mirawonderland/mirawonderland1612/mirawonderland161200002/69512191-cute-black-and-white-chihuahua-puppy-waring-a-pink-sweater-facing-the-camera-isolated-on-a-white.jpg',
+    image: perdido2,
     comments: 'Last seen near the restaurant area.',
   },
   {
@@ -43,10 +44,9 @@ const lostDogs = [
     location: 'Main Square',
     dateLost: '2025-07-12',
     contact: '555-9012',
-    contactLink: '',
     features: 'Very playful, wears a blue collar',
     status: 'Searching',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRelfZmXVc3a9SVcSWwnj-MNnWMBZ23Aq-rig&s',
+    image: perdido3,
     comments: '',
   },
 ];
@@ -85,16 +85,7 @@ export default function LostDogs() {
                   {dog.comments && (
                     <p><strong>Comments:</strong> {dog.comments}</p>
                   )}
-                  <p>
-                    <strong>Contact:</strong>{' '}
-                    {dog.contactLink ? (
-                      <a href={dog.contactLink} target="_blank" rel="noopener noreferrer">
-                        {dog.contact}
-                      </a>
-                    ) : (
-                      dog.contact
-                    )}
-                  </p>
+                 <p><strong>Contact:</strong> {dog.contact}</p>
                 </div>
               </div>
             </div>
