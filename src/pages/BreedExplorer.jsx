@@ -202,7 +202,7 @@ export default function BreedExplorer() {
         {loading ? (
           <div className="spinner-container">
             <img
-              src={huellas.gif}
+              src={huellas}
               alt="Loading..."
               className="spinner-img"
             />

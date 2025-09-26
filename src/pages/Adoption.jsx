@@ -153,7 +153,7 @@ export default function Adoption() {
             {search ? (
               <div className="spinner-container">
                 <img
-                  src={perrito.gif}
+                  src={perrito}
                   alt="Loading..."
                   className="spinner-img"
                 />
