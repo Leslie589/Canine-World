@@ -1,0 +1,330 @@
+/* Variables globales para colores y tamaños */
+:root {
+  --color-footer-bg: rgb(209, 245, 179);
+  --color-footer-text: hsl(19, 95%, 50%);
+  --color-footer-text-dark: black;
+  --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Reset y base */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: var(--font-family-base);
+}
+
+/* Layout general */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Contenedores comunes */
+.container {
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.container-home {
+  margin-bottom: 100px;
+}
+
+.container-breedExplorer {
+  margin-top: 150px;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Navbar */
+.navbar-header {
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 125px;
+}
+
+.navbar-logo,
+.gif-container {
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: transparent;
+  flex-shrink: 0;
+}
+
+.navbar-logo {
+  height: 60px;
+  margin-right: 10px;
+}
+
+.navbar-title {
+  color: white;
+  font-size: 2rem;
+  margin-left: 0.5rem;
+  font-style: italic;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.navbar-nav .nav-link {
+  color: white;
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+}
+
+/* Cards e imágenes genéricas */
+.img-full-width {
+  width: 100%;
+  display: block;
+}
+
+.img-cover {
+  object-fit: cover;
+}
+
+.img-fill {
+  object-fit: fill;
+}
+
+/* Card Imagen Top */
+.card-img-top {
+  height: 300px;
+}
+
+/*Spiner de carga de razas */
+.spinner-container {
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner-img {
+  width: 120px;
+  height: 100px;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+/* Animación opcional */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+
+/* Single Dog Card */
+.perro-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+
+ .perro-img {
+  width: 100%;
+  height: 100%;
+  object-fit:fill;
+  border-radius: 12px;
+  max-height: 400px;
+}
+
+
+
+/* Listas */
+.list li {
+  padding-bottom: 0.25rem;
+}
+
+/* About */
+.about-title {
+  text-align: center;
+}
+
+.about-text {
+  text-align: justify;
+  padding: 0 1rem;
+}
+
+.about-thanks {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* GIF Container específico */
+.gif-container {
+  position: relative;
+  width: 120px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  left: 0;
+}
+
+.gif-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Contenedor general de perros */
+.perros-container {
+  margin-top: 70px;
+  padding: 0 1rem;
+}
+
+/* Footer */
+.footer {
+  margin-top: 70px;
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.footer p {
+  color: var(--color-footer-text-dark);
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+/* Paginación */
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.page-link {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+}
+
+
+
+/* Media Queries */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 992px) {
+  .navbar-title {
+    font-size: 1.5rem;
+    margin-left: 0.25rem;
+  }
+
+  .card-img-top {
+    height: 250px;
+  }
+
+  .about-title {
+    margin-top: 60px;
+  }
+
+  .gif-container {
+    width: 80px;
+    height: 70px;
+  }
+
+  .perro-img {
+    max-height: 300px;
+  }
+
+  .container-breedExplorer {
+    margin-top: 100px;
+  }
+}
+
+/* Móviles */
+@media (max-width: 576px) {
+  .navbar-header {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-logo {
+    height: 45px;
+    margin: 0 auto 0.5rem auto;
+    display: block;
+    margin-right: 15px;
+  }
+
+  .navbar-title {
+    font-size: 1.25rem;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .card-img-top {
+    height: 200px;
+  }
+
+  .about-title {
+    font-size: 1.5rem;
+    margin-top: 40px;
+  }
+
+  .gif-container {
+    width: 60px;
+    height: 50px;
+    margin: 0 auto 1rem auto;
+    top: 0;
+    left: 0;
+  }
+
+  .about-text {
+    padding: 0 0.5rem;
+  }
+
+  .perro-img {
+    max-height: 200px;
+  }
+
+  .footer  {
+    height:80px;
+    padding: 20px 10px;
+  }
+
+ .page-link {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .pagination {
+    padding: 0 0.5rem;
+  }
+ 
+}
+
